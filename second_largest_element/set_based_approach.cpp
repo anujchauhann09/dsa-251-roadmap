@@ -1,23 +1,29 @@
 #include<iostream> // Include the iostream library for input and output operations.
 using namespace std; // Use the standard namespace to avoid prefixing standard functions and objects with 'std::'.
-#include <bits/stdc++.h> // This includes all standard libraries in C++ and is generally used in competitive programming for convenience.
+#include <bits/stdc++.h> // Include all standard libraries in C++. Commonly used in competitive programming for convenience.
 
 int findSecondLargest(int n, vector<int> &arr) {
-    // Sort the array in non-decreasing order (smallest to largest).
-    sort(arr.begin(), arr.end());
+    int maxValue = INT_MIN; // Initialize maxValue to the smallest possible integer value.
+    int secMaxValue = INT_MIN; // Initialize secMaxValue to the smallest possible integer value.
+    set<int> arrSet; // Create a set to store unique elements from the array.
 
-    // Traverse the array from the last element to the first (right to left).
-    for(int i = arr.size() - 1; i > 0; i--) {
-        // Check if the current element is different from the previous one.
-        // This helps skip any duplicate largest values and find the second largest unique value.
-        if(arr[i] != arr[i - 1]) {
-            return arr[i - 1]; // Return the second largest element when found.
-        }
+    // Loop through the input array to populate the set with unique values.
+    for (int i = 0; i < n; i++) {
+        arrSet.insert(arr[i]); // Insert each element of arr into the set, automatically handling duplicates.
     }
 
-    // If no second largest element is found (all elements are identical),
-    // return -1 as a signal that there isn't a valid second largest value.
-    return -1;
+    // Check if the set contains only one unique value.
+    if (arrSet.size() == 1) // If there is only one unique element, return -1 as there is no second largest.
+        return -1;
+
+    // Iterate through the set to determine the largest and second largest values.
+    for (auto value : arrSet) {
+        secMaxValue = maxValue; // Update secMaxValue to the current maxValue before updating maxValue.
+        maxValue = value; // Update maxValue to the current value from the set.
+    }
+
+    // Return the second largest unique value found.
+    return secMaxValue;
 }
 
 int main() {
@@ -39,3 +45,4 @@ int main() {
 
     return 1; // Return 1 to indicate successful execution, although returning 0 is standard in `main`.
 }
+

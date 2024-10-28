@@ -1,3 +1,5 @@
+#include<iostream> // Include the iostream library for input and output operations.
+using namespace std; // Use the standard namespace to avoid prefixing standard functions and objects with 'std::'.
 #include <bits/stdc++.h> // Includes all standard libraries in C++, convenient for competitive programming.
 
 int findSecondLargest(int n, vector<int> &arr) {
@@ -31,4 +33,24 @@ int findSecondLargest(int n, vector<int> &arr) {
 
     // Return the second largest value found
     return secMaxValue;
+}
+
+int main() {
+    // Initialize a vector 'arr' with all elements being 10.
+    // This tests the function's ability to handle cases where all elements are identical.
+    vector<int> arr = {10, 10, 10, 10};
+
+    // Initialize another vector 'arr2' with a mix of values, including duplicates.
+    // This tests the function's handling of duplicates and its ability to find the second largest unique element.
+    vector<int> arr2 = {7, 8, 8, 1, 4, 3};
+
+    // Call the findSecondLargest function on 'arr' and print the result.
+    // Since all elements are the same, the expected output is -1, as there is no unique second largest value.
+    cout << findSecondLargest(arr.size(), arr) << endl;
+
+    // Call the findSecondLargest function on 'arr2' and print the result.
+    // The expected output is 7, which is the second largest unique element in the array.
+    cout << findSecondLargest(arr2.size(), arr2) << endl;
+
+    return 1; // Return 1 to indicate successful execution, although returning 0 is standard in `main`.
 }
