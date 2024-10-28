@@ -1,3 +1,5 @@
+#include<iostream>
+using namespace std;
 #include <bits/stdc++.h> // This includes all standard libraries in C++ and is generally used in competitive programming for convenience.
 
 int findSecondLargest(int n, vector<int> &arr) {
@@ -16,4 +18,14 @@ int findSecondLargest(int n, vector<int> &arr) {
     // If no second largest element is found (all elements are identical),
     // return -1 as a signal that there isn't a valid second largest value.
     return -1;
+}
+
+int main() {
+    vector<int> arr = {10, 10, 10, 10};
+    vector<int> arr2 = {7, 8, 8, 1, 4, 3};
+
+    cout<< findSecondLargest(arr.size(), arr)<< endl;
+    cout<< findSecondLargest(arr2.size(), arr2)<< endl; 
+
+    return 1;
 }
