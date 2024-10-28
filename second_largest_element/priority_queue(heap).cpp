@@ -57,3 +57,10 @@ int main() {
     return 1; // Return 1 to indicate successful execution, although returning 0 is standard in `main`.
 }
 
+/*
+Time Complexity:
+The time complexity is O(n + u log u), where n is the number of elements in the input array and u is the number of unique elements. Initially, the algorithm makes a single pass through the array to insert elements into a set, which takes O(n) time since each insertion into a set operates in average constant time. After that, the unique elements are pushed onto a priority queue, which takes O(u log u) time because each insertion into the priority queue requires logarithmic time. This combination of operations results in the overall time complexity being dependent on both the size of the original array and the number of unique elements within it.
+
+Space Complexity:
+The space complexity is O(u), where u represents the number of unique elements in the array. This is because the set stores these unique values, and the priority queue also holds the same unique elements. In the worst-case scenario, where all elements in the array are distinct, the space required would approach O(n). Thus, the algorithm is designed to efficiently find the second largest unique element, leveraging both the properties of sets and priority queues while managing time and space effectively.
+*/

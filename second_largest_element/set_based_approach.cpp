@@ -46,3 +46,10 @@ int main() {
     return 1; // Return 1 to indicate successful execution, although returning 0 is standard in `main`.
 }
 
+/*
+Time Complexity:
+The time complexity is O(n), where n is the number of elements in the input array. This complexity arises because the algorithm requires a single pass through the array to insert all elements into a set, which inherently handles duplicates and stores only unique values. Inserting each element into the set takes average constant time, leading to a linear time complexity for this operation. After populating the set, the algorithm then iterates through the unique elements, which, in the worst case, can also be O(n) if all elements are distinct. Thus, the overall time complexity remains O(n).
+
+Space Complexity:
+The space complexity is O(u), where u is the number of unique elements in the array. This is because the set is used to store these unique elements, and the amount of space required is directly proportional to the number of unique values. In the worst case, where all elements are unique, the space complexity would be O(n). However, since the space used is dependent on the distinct elements, we represent the space complexity in terms of u. Therefore, the algorithm is efficient in terms of both time and space, effectively finding the second largest unique element in the input array.
+*/

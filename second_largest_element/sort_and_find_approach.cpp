@@ -39,3 +39,11 @@ int main() {
 
     return 1; // Return 1 to indicate successful execution, although returning 0 is standard in `main`.
 }
+
+/*
+Time Complexity:
+The time complexity is O(n log n) due to the sorting operation performed by the sort function, which typically runs in O(n log n) time. After sorting, the code iterates through the array in a single pass to find the second largest unique element, which contributes an additional O(n) to the overall complexity. However, the dominating factor is the sorting step, so the total time complexity remains O(n log n).
+
+Space Complexity:
+The space complexity is O(1) because the sorting is done in place, meaning it does not require any additional data structures that grow with the input size. Although the sorting algorithm may use some temporary space internally, it does not increase with the size of the input array. Hence, the space used is constant, making the space complexity O(1). Overall, the function efficiently identifies the second largest element while maintaining optimal space usage.
+*/

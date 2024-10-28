@@ -54,3 +54,11 @@ int main() {
 
     return 1; // Return 1 to indicate successful execution, although returning 0 is standard in `main`.
 }
+
+/*
+Time Complexity:
+The time complexity is O(n), where n is the number of elements in the input array. This is because the algorithm requires a single pass through the array to determine the largest and second largest values. In each iteration, it performs a constant amount of work (comparing values and updating variables), which results in linear time complexity.
+
+Space Complexity:
+The space complexity is O(1), meaning it uses a constant amount of additional space regardless of the input size. The function only utilizes a few integer variables (maxValue, secMaxValue, and isAllValuesSame) to store state information during its execution, which does not grow with the size of the input array. Therefore, the space remains constant, making the overall space complexity O(1). This efficiency allows the function to operate optimally in terms of both time and space, effectively finding the second largest element in the array.
+*/
